@@ -2,7 +2,6 @@ const invoiceModel = require("../../db/models").invoice;
 
 const getUserInvoices = async (userID, data) => {
   try {
-    console.log(data);
     switch (data.filter) {
       case "paid":
         query = { userID: userID, status: "paid" };

@@ -5,7 +5,6 @@ module.exports = logout = async (ctx, next) => {
   try {
     const sesh = crypto.randomUUID();
     const expiry = new Date();
-    console.log(ctx.user);
 
     const update = await user.updateOne(
       { email: ctx.user.email },
@@ -16,7 +15,6 @@ module.exports = logout = async (ctx, next) => {
         },
       }
     );
-    console.log(update);
 
     return (
       (ctx.status = 200),
