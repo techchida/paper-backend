@@ -8,7 +8,6 @@ const whitelist = {
 const verifyOrigin = (ctx) => {
   // Get requesting origin hostname
   var origin = ctx.headers.origin;
-  console.log(origin, process.env.NODE_ENV);
   // Make sure it's a valid origin
   if (whitelist[process.env.NODE_ENV].indexOf(origin) != -1) {
     // Set the header to the requested origin
