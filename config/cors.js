@@ -2,12 +2,19 @@ require("dotenv").config();
 
 const whitelist = {
   dev: ["http://localhost:5173", "undefined"],
-  prod: ["https://invoicepaper.vercel.app", "http://localhost:5173"],
+  prod: ["https://invoicepaper.vercel.app"],
 };
 
 const verifyOrigin = (ctx) => {
   // Get requesting origin hostname
-  return ctx.headers.origin;
+  var origin = ctx.headers.origin;
+  console.log(origin, process.env.NODE_ENV);
+  // Make sure it's a valid origin
+  if (whitelist[process.env.NODE_ENV].indexOf(origin) != -1) {
+    // Set the header to the requested origin
+    ctx.set("Access-Control-Allow-Origin", origin);
+    return origin;
+  }
 };
 
 module.exports = {
