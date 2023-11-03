@@ -9,7 +9,6 @@ const deleteInvoice = async (invoiceID, userID) => {
       return { error: "Sorry we could not find this invoice" };
 
     const del = await invoiceModel.deleteOne(filter);
-    console.log(invoice, del);
 
     return true;
   } catch (error) {

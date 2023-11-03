@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const whitelist = {
   dev: ["http://localhost:5173", "undefined"],
-  prod: [],
+  prod: ["https://invoicepaper.vercel.app"],
 };
 
 const verifyOrigin = (ctx) => {

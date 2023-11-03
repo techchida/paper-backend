@@ -12,7 +12,6 @@ const getCustomers = async (ctx) => {
       },
     };
     const result = await customer.paginate(query, options);
-    console.log(result);
     return (
       (ctx.status = 200),
       (ctx.body = ctx.responder({

@@ -2,8 +2,6 @@ const { invoice, company } = require("../../db/models");
 
 const createInvoice = async (data) => {
   try {
-    console.log(data);
-
     // data.company = await company
     //   .findOne({
     //     userID: data.userID,
