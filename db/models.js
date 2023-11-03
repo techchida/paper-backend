@@ -121,7 +121,7 @@ module.exports = models = {
         type: Number,
       },
       created_at: {
-        type: String,
+        type: Date,
         required: true,
       },
       last_modified: {
