@@ -10,5 +10,6 @@ invoiceRouter.get("/get", require("./getInvoices"));
 invoiceRouter.delete("/delete/:id", require("./deleteInvoice"));
 invoiceRouter.put("/update", require("./editInvoice"));
 invoiceRouter.get("/stats", require("./stats"));
+invoiceRouter.post("/send", require("./sendInvoice"));
 
 module.exports = invoiceRouter;
